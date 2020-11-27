@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" /> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet"> 
+    <title>PIZZA</title>
+</head>
+<body>
+
+    <header>
+      <div class="TITRE">
+        <h3>
+         <span>P</span>
+         <span>I</span>
+         <span class="letter left">Z</span>
+         <span class="letter right">Z</span>
+         <span>A</span>
+        </h3>
+      </div>
+    </header>
+
+    <form>
+        <div class="listing">
+            <div class="logo"><img style = "width: 30%" src="https://cdn5.coloritou.com/dessins/peindre/201530/pizza-heureuse-aliments-pain-et-pates-66765.jpg"  alt="reine" height="40"/></div>
+            <div class="pizza">Reine :</div>
+            <div class="assaisonnement">tomate, jambon, fromage, olives</div>
+            <div class="line"></div>
+            <div class="prixUnitaire">8</div>
+            <div class="less">-</div>
+            <div class="qte">0</div>
+            <div class="more">+</div>
+            <div class="total">0</div>
+        </div>
+        <div class="listing">
+            <div class="logo"><img style = "width: 30%" src="https://cdn5.coloritou.com/dessins/peindre/201530/pizza-heureuse-aliments-pain-et-pates-66765.jpg"  alt="reine" height="40"/></div>
+            <div class="pizza">Reine Blanche :</div>
+            <div class="assaisonnement">crème, jambon, fromage, olives</div>
+            <div class="line"></div>
+            <div class="prixUnitaire">8</div>
+            <div class="less">-</div>
+            <div class="qte">0</div>
+            <div class="more">+</div>
+            <div class="total">0</div>
+        </div>
+        <div class="listing">
+            <div class="logo"><img style = "width: 30%" src="https://cdn5.coloritou.com/dessins/peindre/201530/pizza-heureuse-aliments-pain-et-pates-66765.jpg"  alt="reine" height="40"/></div>
+            <div class="pizza">Napolitaine :</div>
+            <div class="assaisonnement">tomate, fromage, anchois, olives</div>
+            <div class="line"></div>
+            <div class="prixUnitaire">9</div>
+            <div class="less">-</div>
+            <div class="qte">0</div>
+            <div class="more">+</div>
+            <div class="total">0</div>
+        </div>
+        <div class="listing">
+            <div class="logo"><img style = "width: 30%" src="https://upload.wikimedia.org/wikipedia/commons/1/10/Corse_Ic%C3%B4ne.svg"  alt="corse" height="40"/></div>
+            <div class="pizza">Corsica :</div>
+            <div class="assaisonnement">coppa, tomme de brebis, saucisse corse</div>
+            <div class="line"></div>
+            <div class="prixUnitaire">9</div>
+            <div class="less">-</div>
+            <div class="qte">0</div>
+            <div class="more">+</div>
+            <div class="total">0</div>
+        </div>
+        <div class="listing">
+            <div class="logo"><img style = "width: 30%" src="https://cdn5.coloritou.com/dessins/peindre/201530/pizza-heureuse-aliments-pain-et-pates-66765.jpg"  alt="reine" height="30"/></div>
+            <div class="pizza">Avigniente :</div>
+            <div class="assaisonnement">truffe, tabasco, pastis 51, olives </div>
+            <div class="line"></div>
+            <div class="prixUnitaire">9</div>
+            <div class="less">-</div>
+            <div class="qte">0</div>
+            <div class="more">+</div>
+            <div class="total">0</div>
+        </div><br/>
+
+        <div class="summarize"></div><br/>
+
+        <div class="TOTAL">0</div><br/>
+
+        <div id="smart-button-container">
+          <div style="text-align: center;">
+            <div id="paypal-button-container"></div>
+          </div>
+        </div>
+      <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+      <script>
+        function initPayPalButton() {
+          paypal.Buttons({
+            style: {
+              shape: 'rect',
+              color: 'gold',
+              layout: 'vertical',
+              label: 'paypal',
+              
+            },
+    
+            createOrder: function(data, actions) {
+              return actions.order.create({
+                purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+              });
+            },
+    
+            onApprove: function(data, actions) {
+              return actions.order.capture().then(function(details) {
+                alert('Transaction completed by ' + details.payer.name.given_name + '!');
+              });
+            },
+    
+            onError: function(err) {
+              console.log(err);
+            }
+          }).render('#paypal-button-container');
+        }
+        initPayPalButton();
+      </script>
+      
+
+        <button id="reset">Réinitialiser la commande</button>
+
+    </form>
+
+    <footer>
+      <div class="TITRE">
+        <h3>
+         <span>P</span>
+         <span>I</span>
+         <span class="letter left">Z</span>
+         <span class="letter right">Z</span>
+         <span>A</span>
+        </h3>
+      </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

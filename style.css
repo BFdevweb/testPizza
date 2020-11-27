@@ -1,0 +1,181 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #abb2b9;
+}
+  
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    background: url("https://img.freepik.com/vecteurs-libre/personnage-dessin-anime-pizza-colere_120675-104.jpg?size=338&ext=jpg") repeat;
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 5cm;
+}
+
+h3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: 7rem;
+    line-height: 1.35rem;
+    font-family: 'Pacifico', cursive;
+    color: red;
+    
+}
+
+.TITRE {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3cm;
+    width: 100%;
+    font-family: 'Nerko One', cursive;
+    font-size: 5rem;
+    color: red;
+}
+
+span.letter {
+    animation: letter-rotate 2s linear infinite;
+}
+  
+@keyframes letter-rotate {
+    to {
+      transform: rotate(1turn);
+}}
+
+form {
+    width:80%;
+    margin:auto;
+    display:flex;
+    flex-direction: column;
+    border-width: 15px 15px 15px 15px;
+    border-style: dashed;
+    border-color: red black orange green;
+    background-color: white;
+}
+
+.listing {
+    display: flex;
+    margin-bottom: 30px
+}
+
+.logo {
+    width: 10%;
+    margin-left: 1cm ;
+}
+  
+.pizza {
+    width: 15%;
+    font-weight: bold;
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    text-shadow: 7px 4px 3px rgb(235, 99, 9);
+    text-decoration: underline;
+}
+  
+.assaisonnement {
+    width: 30%;
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    margin-left: 7px;
+}
+
+.line{
+    border-top: 1px solid black;
+    width: 15%;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.prixUnitaire {
+    font-weight: bold;
+    font-family: 'Caveat', cursive;
+    font-size: 1.9rem;
+    margin-left: 2cm;
+}
+.prixUnitaire:after {
+    content: "€";
+}
+  
+.less, .more{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 30px;
+    color : white;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background-color: red;
+}
+  
+.qte {
+    height: 30px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    margin-left: 30px;
+    border-width: 3px 3px 3px 3px;
+    border: 20px 20px 20px 20px;
+    border-style: dotted;
+    border-color: red green orange black;
+}
+
+.total {
+    width: 10%;
+    font-weight: bold;
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    margin-top: 5px;
+    margin-left: 3cm;
+}
+.total:after {
+    content: "€";
+}
+
+.summarize {
+    display: flex;
+    justify-content: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+}  
+
+.TOTAL {
+    margin-left: 45%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 2.2rem;
+    border-left: 15px double green;
+    border-right: 15px double red;
+    border-radius: 22px 22px 22px 22px;
+}
+.TOTAL:after {
+    content: "€";
+}   
+
+#smart-button-container {
+    visibility: hidden;
+}
+
+#reset {
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: 5px none grey;
+}
